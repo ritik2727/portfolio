@@ -13,7 +13,7 @@ import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Zoom from '@mui/material/Zoom';
 import ScrollTop from './ScrollTop';
-import logo from '../../assets/f3.svg'
+import logo from '../../assets/rj45.svg'
 import './styles.css'
 
 function ElevationScroll(props) {
