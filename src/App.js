@@ -4,10 +4,11 @@
 import { ThemeProvider ,createTheme} from '@mui/material/styles';
 import { StyledEngineProvider } from '@mui/styled-engine';
 
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import { BrowserRouter,Route ,Switch } from "react-router-dom";
 import LandingPage from './components/LandingPage';
-import DarkTheme from './components/ui/DarkTheme';
+import Skills from './components/Skills';
+import darkTheme from './components/ui/DarkTheme';
 import Header from "./components/ui/Header";
 import ThemeV from './components/ui/Theme';
 import theme from "./components/ui/Theme";
@@ -15,16 +16,17 @@ import theme from "./components/ui/Theme";
 function App(props) {
   const [value,setValue] = useState(0);
   const [selectedIndex,setSelectedIndex] = useState(0)
-  const [dark, setDark] = useState(false)
-
-
+  const [dark, setDark] = useState(true)
+  
+  useEffect(() => {
+    setDark(dark)
+  })
   return (
     <StyledEngineProvider injectFirst>
-    <ThemeProvider theme={dark ? DarkTheme : theme} dark={dark}
+    <ThemeProvider theme={dark ? darkTheme : theme} dark={dark}
       setDark={setDark}>
-      <BrowserRouter>
 
-      
+      <div style={{backgroundColor:dark? '#171C28' :'#FFFFFF' ,height:'100%',width:'100%'}}>
       <Header   
       {...props}
       dark={dark}
@@ -35,9 +37,14 @@ function App(props) {
           setSelectedIndex={setSelectedIndex}/>
 
        
-
-      </BrowserRouter>
-      
+    <LandingPage   {...props}
+      dark={dark}
+      setDark={setDark}/>
+    
+       <Skills {...props}
+      dark={dark}
+      setDark={setDark}/>
+     </div>
     </ThemeProvider>
     </StyledEngineProvider>
   );

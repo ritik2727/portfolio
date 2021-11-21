@@ -2,7 +2,7 @@ import { createTheme, ThemeProvider, styled } from '@mui/material';
 
 
 
-const arcBlue = '#FFFFFF';
+const arcBlue = '#171C28';
 const arcOrange = '#FFBA60';
 const arcGrey ='#868686'
 const arcBlack = '#000000'

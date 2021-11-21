@@ -1,5 +1,5 @@
 import React, { useState ,useEffect} from 'react';
-import { AppBar,Button,IconButton,List,ListItem,Menu,MenuItem,Tab,Tabs,SwipeableDrawer } from '@mui/material';
+import { AppBar,Button,IconButton,List,ListItem,Menu,MenuItem,Tab,Tabs,SwipeableDrawer,Box } from '@mui/material';
 import { Toolbar,useScrollTrigger ,ListItemText,Slide} from '@mui/material';
 import { Switch } from '@mui/material';
 import makeStyles  from '@mui/styles/makeStyles';
@@ -9,31 +9,39 @@ import MenuIcon from '@mui/icons-material/Menu'
 import {Link} from 'react-router-dom'
 import { createTheme } from '@mui/material';
 import LandingPage from '../LandingPage';
+import Fab from '@mui/material/Fab';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import Zoom from '@mui/material/Zoom';
+import ScrollTop from './ScrollTop';
+import logo from '../../assets/f3.svg'
+import './styles.css'
+
 function ElevationScroll(props) {
-    const { children } = props;
-  
-    const trigger = useScrollTrigger({
-      disableHysteresis: true,
-      threshold: 0
-    });
-  
-    return React.cloneElement(children, {
-      elevation: trigger ? 4 : 0
-    });
+  const { children, window } = props;
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  )
   }
+
   
   const useStyles = makeStyles((theme) => ({
 
   
     toolbarMargin: {
       ...theme.mixins.toolbar,
-      marginBottom: "3em",
-      [theme.breakpoints.down("md")]: {
-        marginBottom: "2em"
-      },
-      [theme.breakpoints.down("xs")]: {
-        marginBottom: "1.25em"
-      }
+      // marginBottom: "3em",
+      // [theme.breakpoints.down("md")]: {
+      //   marginBottom: "2em"
+      // },
+      // [theme.breakpoints.down("xs")]: {
+      //   marginBottom: "1.25em"
+      // }
     },
     logo: {
       height: "8em",
@@ -57,7 +65,7 @@ function ElevationScroll(props) {
       ...theme.typography.tab,
       minWidth: 10,
       marginLeft: "25px",
-      color:'black'
+      color:'black',
     },
     button: {
       ...theme.typography.estimate,
@@ -109,7 +117,7 @@ function ElevationScroll(props) {
     },
     appbar: {
       zIndex: theme.zIndex.modal + 1
-    }
+    },
   }));
   
   export default function Header(props) {
@@ -130,11 +138,11 @@ function ElevationScroll(props) {
   
    
     const routes = [
-      { name: "Home", link: "/", activeIndex: 0 },
-      { name: "AboutMe",link: "/services",activeIndex: 1},
-      { name: "Skills", link: "/revolution", activeIndex: 2 },
-      { name: "Work Experiences", link: "/about", activeIndex: 3 },
-      { name: "ContactMe", link: "/contact", activeIndex: 4 }
+      { name: "Home",  activeIndex: 0 },
+      { name: "AboutMe",activeIndex: 1},
+      { name: "Skills", activeIndex: 2 },
+      { name: "Work Experiences", activeIndex: 3 },
+      { name: "ContactMe", activeIndex: 4 }
     ];
   
     useEffect(() => {
@@ -151,9 +159,7 @@ function ElevationScroll(props) {
               }
             }
             break;
-          case "/estimate":
-            props.setValue(5);
-            break;
+
           default:
             break;
         }
@@ -172,24 +178,36 @@ function ElevationScroll(props) {
             <Tab
               key={`${route}${index}`}
               className={classes.tab}
-              component={Link}
-              to={route.link}
-              style={{color:props.dark ? 'black' :'#FFFFFF',opacity:'70%'}}
+              // component={Link}
+              // to={route.link}
+              style={{color:props.dark ?  '#FFFFFF' : 'black',opacity:'70%'}}
               label={route.name}
             />
           ))}
         </Tabs>
-        <Switch style={{color:'white' }} checked={props.dark} onChange={() =>props.setDark(!props.dark)} />
-        {/* <Button
-          component={Link}
-          to="/estimate"
-          variant="contained"
-          color="secondary"
-          className={classes.button}
-          onClick={() => props.setValue(5)}
-        >
-          kh
-        </Button> */}
+        {/* <Switch style={{color:'blue', }} 
+        
+       
+        /> */}
+        <Button
+          disableRipple
+          // className={classes.button}
+          onClick={() =>props.setDark(!props.dark)} 
+         
+        >{props.dark ?
+          <img 
+          src='https://cdn-icons-png.flaticon.com/512/2698/2698194.png'
+           style={{width:25,height:25}} 
+
+           />
+           :
+           <img 
+           src='https://cdn-icons.flaticon.com/png/512/3106/premium/3106764.png?token=exp=1637247370~hmac=9ed4c84fc9b80f58fee1a5111a878ec8'
+            style={{width:25,height:25}} 
+ 
+            />
+        }
+        </Button>
       </React.Fragment>
     );
   
@@ -210,8 +228,8 @@ function ElevationScroll(props) {
                 divider
                 key={`${route}${route.activeIndex}`}
                 button
-                component={Link}
-                to={route.link}
+                // component={Link}
+                // to={route.link}
                 selected={props.value === route.activeIndex}
                 classes={{ selected: classes.drawerItemSelected }}
                 onClick={() => {
@@ -231,12 +249,12 @@ function ElevationScroll(props) {
               }}
               divider
               button
-              component={Link}
+              // component={Link}
               classes={{
                 root: classes.drawerItemEstimate,
                 selected: classes.drawerItemSelected
               }}
-              to="/estimate"
+              // to="/estimate"
               selected={props.value === 5}
             >
               <ListItemText className={classes.drawerItem} disableTypography>
@@ -260,23 +278,25 @@ function ElevationScroll(props) {
       <React.Fragment>
         <ElevationScroll>
           <AppBar position="fixed" className={classes.appbar}>
-            <Toolbar disableGutters>
+            <Toolbar disableGutters id="back-to-top-anchor">
               <Button
-                component={Link}
-                to="/"
+                // component={Link}
+                // to="/"
                 disableRipple
                 onClick={() => props.setValue(0)}
                 className={classes.logoContainer}
                 style={{color:'white'}}
               >
-                 Ritik Jain 
+              <img src={logo} 
+               style={{height:70,width:70,padding:'0.5em',marginLeft:'2em'}}
+              />
               </Button>
               {matches ? drawer : tabs}
             </Toolbar>
           </AppBar>
         </ElevationScroll>
         <div className={classes.toolbarMargin} />
-        <LandingPage />
+      <ScrollTop showBelow={250} />
       </React.Fragment>
     );
   }

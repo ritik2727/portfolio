@@ -2,7 +2,7 @@ import { createTheme, ThemeProvider, styled } from '@mui/material';
 
 
 
-const arcBlue = '#171C28';
+const arcBlue = '#FFFFFF';
 const arcOrange = '#FFBA60';
 const arcGrey ='#868686'
  
@@ -69,7 +69,7 @@ export default createTheme({
       },
       body1: {
         fontSize: "1.25rem",
-        color: arcGrey,
+        color:'#868E96',
         fontWeight: 300
       },
       caption: {
