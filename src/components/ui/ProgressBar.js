@@ -8,7 +8,8 @@ const ProgressBar = (props) => {
       width: '100%',
       backgroundColor: "#e0e0de",
       borderRadius: 50,
-      margin: 50
+      marginBottom: 25,
+      marginTop: 25
     }
   
     const fillerStyles = {
@@ -28,7 +29,7 @@ const ProgressBar = (props) => {
     return (
         <>
        <div>
-           <Typography>
+           <Typography style={{color:'#FFFFFF'}}>
               {title}
            </Typography>
        </div>

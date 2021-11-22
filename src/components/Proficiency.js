@@ -51,7 +51,7 @@ const testData = [
     {title:'Backend', bgcolor: "#1976D2", completed: 70 },
     { title:'UI/UX Design',bgcolor: "#1976D2", completed: 60 },
     { title:'Programming',bgcolor: "#1976D2", completed: 60 },
-    { title:'Mobile/',bgcolor: "#1976D2", completed: 70 },
+    { title:'Mobile',bgcolor: "#1976D2", completed: 70 },
   ];
   
     const defaultOptions = {
@@ -76,7 +76,7 @@ const testData = [
     }
     const ContainerSecond = () =>{
       return (
-        <Grid item container direction="column" sm style={{ maxWidth: "40em" }}>
+        <Grid item container direction="column" sm style={{ maxWidth: "48em",marginRight:matchesMD?0:'4em' }}>
         <Grid item>
             <Typography
               align={matchesMD ? "center" : "left"}
@@ -87,11 +87,13 @@ const testData = [
             Proficiency
             </Typography>
         </Grid>
-        <Grid item>
+        
         {testData.map((item, idx) => (
+        <Grid item>
         <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.completed} title={item.title} />
-      ))}
         </Grid>
+      ))}
+        
        
 
       </Grid>
@@ -112,12 +114,12 @@ const testData = [
        
      
         <ContainerSecond />
-        <Hidden mdDown>
+        <Hidden lgDown>
         <Containerfirst/>
         </Hidden>
-        <Hidden mdUp>
+        {/* <Hidden mdUp>
         <Containerfirst/>
-        </Hidden>
+        </Hidden> */}
       </Grid>
      </Grid>
     );

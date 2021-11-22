@@ -13,7 +13,7 @@ import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Zoom from '@mui/material/Zoom';
 import ScrollTop from './ScrollTop';
-import logo from '../../assets/rj45.svg'
+import logo from '../../assets/rj455.svg'
 import './styles.css'
 
 function ElevationScroll(props) {
@@ -140,7 +140,7 @@ function ElevationScroll(props) {
     const routes = [
       { name: "Home",  activeIndex: 0 },
       { name: "AboutMe",activeIndex: 1},
-      { name: "Skills", activeIndex: 2 },
+      { name: "Skills", activeIndex: 2,link:'#shiless' },
       { name: "Work Experiences", activeIndex: 3 },
       { name: "ContactMe", activeIndex: 4 }
     ];
@@ -175,14 +175,17 @@ function ElevationScroll(props) {
           indicatorColor="primary"
         >
           {routes.map((route, index) => (
+            <a>
             <Tab
               key={`${route}${index}`}
               className={classes.tab}
               // component={Link}
               // to={route.link}
+              href={route.link}
               style={{color:props.dark ?  '#FFFFFF' : 'black',opacity:'70%'}}
               label={route.name}
             />
+            </a>
           ))}
         </Tabs>
         {/* <Switch style={{color:'blue', }} 
@@ -192,6 +195,7 @@ function ElevationScroll(props) {
         <Button
           disableRipple
           // className={classes.button}
+          value={props.dark}
           onClick={() =>props.setDark(!props.dark)} 
          
         >{props.dark ?

@@ -20,11 +20,18 @@ import Proficiency from './components/Proficiency';
 function App(props) {
   const [value,setValue] = useState(0);
   const [selectedIndex,setSelectedIndex] = useState(0)
-  const [dark, setDark] = useState(true)
+  const [dark, setDark] = useState( getDefaultTheme)
   const [loading,setLoading] = useState(false)
   
+  React.useEffect(() => {
+    localStorage.setItem('dark', JSON.stringify(dark))
+  }, [dark])
+  
+  function getDefaultTheme() {
+    const selectedTheme = JSON.parse(localStorage.getItem('dark'))
+    return selectedTheme || false
+  }
   useEffect(() => {
-    setDark(dark)
     setLoading(true)
     setTimeout(()=>{
       setLoading(false)
@@ -59,11 +66,14 @@ function App(props) {
        
     <LandingPage   {...props}
       dark={dark}
-      setDark={setDark}/>
+      setDark={setDark}
+      />
     
        <Skills {...props}
       dark={dark}
-      setDark={setDark}/>
+      setDark={setDark}
+     
+      />
     <Proficiency 
     {...props}
     dark={dark}
