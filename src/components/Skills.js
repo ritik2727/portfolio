@@ -2,7 +2,7 @@ import { Grid,Typography,useMediaQuery ,Button, Hidden} from '@mui/material';
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { useTheme } from '@mui/material';
-import technologyAnimation from "../animation/codingPerson.json";
+import technologyAnimation from "../animation/landingPageCoder.json";
 import Lottie from "react-lottie";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -10,6 +10,7 @@ import { faReact,faNode } from '@fortawesome/free-brands-svg-icons'
 import nextjs from '../assets/nextjs.svg'
 import { width } from '@mui/system';
 import SkillsIcon from './ui/SkillsIcon';
+
 
 const useStyles = makeStyles(theme => ({
     rowContainer: {

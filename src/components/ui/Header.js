@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState ,useEffect,useContext} from 'react';
 import { AppBar,Button,IconButton,List,ListItem,Menu,MenuItem,Tab,Tabs,SwipeableDrawer,Box } from '@mui/material';
 import { Toolbar,useScrollTrigger ,ListItemText,Slide} from '@mui/material';
 import { Switch } from '@mui/material';
@@ -15,6 +15,10 @@ import Zoom from '@mui/material/Zoom';
 import ScrollTop from './ScrollTop';
 import logo from '../../assets/rj455.svg'
 import './styles.css'
+
+
+import { DarkThemeContext } from '../../context/DarkThemeContext';
+
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -122,14 +126,14 @@ function ElevationScroll(props) {
   
   export default function Header(props) {
 
-    const classes = useStyles(props);
+    const classes = useStyles();
     const theme = useTheme();
     const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
     const matches = useMediaQuery(theme.breakpoints.down("md"));
   
     const [openDrawer, setOpenDrawer] = useState(false);
-
-  
+    const { dt} = useContext(DarkThemeContext)
+    const [darkTheme,setDarkTheme] = dt;
     const handleChange = (e, newValue) => {
       props.setValue(newValue);
     };
@@ -175,17 +179,18 @@ function ElevationScroll(props) {
           indicatorColor="primary"
         >
           {routes.map((route, index) => (
-            <a>
+      
             <Tab
               key={`${route}${index}`}
               className={classes.tab}
-              // component={Link}
+              // component={ScrollLink}
+              // smooth={true}
               // to={route.link}
-              href={route.link}
-              style={{color:props.dark ?  '#FFFFFF' : 'black',opacity:'70%'}}
+              
+              style={{color:darkTheme ?  '#FFFFFF' : 'black',opacity:'80%'}}
               label={route.name}
             />
-            </a>
+       
           ))}
         </Tabs>
         {/* <Switch style={{color:'blue', }} 
@@ -195,10 +200,10 @@ function ElevationScroll(props) {
         <Button
           disableRipple
           // className={classes.button}
-          value={props.dark}
-          onClick={() =>props.setDark(!props.dark)} 
+          value={darkTheme}
+          onClick={() =>setDarkTheme(!darkTheme)} 
          
-        >{props.dark ?
+        >{darkTheme ?
           <img 
           src='https://cdn-icons-png.flaticon.com/512/2698/2698194.png'
            style={{width:25,height:25}} 

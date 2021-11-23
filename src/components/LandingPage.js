@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Typography , Button,useMediaQuery,Fab,ReactGA} from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useTheme } from '@mui/material';
@@ -10,6 +10,7 @@ import SocialMediaIcon from './ui/SocialMediaIcon';
 import Skills from './Skills';
 import reactjs from '../assets/reactjs.svg'
 import { padding } from '@mui/system';
+import { DarkThemeContext } from '../context/DarkThemeContext';
 
 
 
@@ -121,6 +122,9 @@ function LandingPage(props) {
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  const { dt} = useContext(DarkThemeContext)
+  const [darkTheme,setDarkTheme] = dt;
+
 
   const defaultOptions = {
     loop: true,
@@ -134,7 +138,7 @@ function LandingPage(props) {
       <Grid container direction='column' >
       <Grid
       container
-      direction={matchesMD ? "column=" : "row"}
+      direction={matchesMD ? "column" : "row"}
       alignItems="center"
       justifyContent='center'
       className={classes.rowContainer}
@@ -143,13 +147,13 @@ function LandingPage(props) {
       <Grid item container direction="column" md style={{ maxWidth: "40em" }}>
         <Grid item>
         <Typography variant="h4" align="center"  
-            style={{color:props.dark? '#FFFFFF' :'#171C28' }}
+            style={{color:darkTheme? '#FFFFFF' :'#171C28' }}
             >
               Hello, I'M {" "}<span className={classes.specialText}>Ritik Jain</span>
             
             </Typography>
             <Typography variant="h2" align="center"  
-            style={{color:props.dark? '#FFFFFF' :'#171C28' }}
+            style={{color:darkTheme? '#FFFFFF' :'#171C28' }}
             >
                 <Typewriter
                 options={{

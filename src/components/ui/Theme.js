@@ -1,19 +1,23 @@
-import { createTheme, ThemeProvider, styled } from '@mui/material';
+import { createTheme, ThemeProvider, styled ,responsiveFontSizes} from '@mui/material';
+import React,{ useContext,useState } from 'react';
+import { DarkThemeContext } from '../../context/DarkThemeContext';
 
 
 
 const arcBlue = '#FFFFFF';
 const arcOrange = '#FFBA60';
 const arcGrey ='#868686'
- 
-export default createTheme({
+
+
+
+let theme = createTheme({
   palette: {
     common: {
-      blue: arcBlue,
+      blue:arcBlue,
       orange: arcOrange
     },
     primary: {
-      main: arcBlue
+      main: arcBlue,
     },
     secondary: {
       main: arcOrange
@@ -113,4 +117,8 @@ export default createTheme({
     }
   }
   }
-});
+})
+ 
+const Theme = responsiveFontSizes(theme);
+
+export default Theme;

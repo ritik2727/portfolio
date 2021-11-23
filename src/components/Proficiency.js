@@ -51,7 +51,7 @@ const testData = [
     {title:'Backend', bgcolor: "#1976D2", completed: 70 },
     { title:'UI/UX Design',bgcolor: "#1976D2", completed: 60 },
     { title:'Programming',bgcolor: "#1976D2", completed: 60 },
-    { title:'Mobile',bgcolor: "#1976D2", completed: 70 },
+    { title:'Mobile App',bgcolor: "#1976D2", completed: 70 },
   ];
   
     const defaultOptions = {

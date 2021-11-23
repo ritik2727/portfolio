@@ -2,6 +2,8 @@ import React,{useState, useEffect} from 'react';
 import { makeStyles } from '@mui/styles';
 import { ExpandLess } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
+import FlashOnIcon from '@mui/icons-material/FlashOn';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 const useStyles = makeStyles((theme) => ({
     toTop: {
@@ -55,10 +57,11 @@ const ScrollTop = ({
     return (
         <div>
             {show &&
-                <IconButton onClick={handleClick} className={classes.toTop} style={{backgroundColor:'red'}} aria-label="to top" component="span">
-                   <img src='https://cdn-icons-png.flaticon.com/512/222/222506.png'
+                <IconButton onClick={handleClick} className={classes.toTop} style={{backgroundColor:'#1976D2'}} aria-label="to top" component="span">
+                   {/* <img src='https://cdn-icons-png.flaticon.com/512/222/222506.png'
                         style={{height:30,width:30}}
-                    />
+                    /> */}
+                    <ArrowUpwardIcon style={{height:30,width:30}} style={{color:'white'}} />
                 </IconButton>
             }
         </div>
