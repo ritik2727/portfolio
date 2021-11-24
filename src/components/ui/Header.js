@@ -15,6 +15,8 @@ import Zoom from '@mui/material/Zoom';
 import ScrollTop from './ScrollTop';
 import logo from '../../assets/rj455.svg'
 import './styles.css'
+import { Link as ScrollLink } from "react-scroll";
+
 
 
 import { DarkThemeContext } from '../../context/DarkThemeContext';
@@ -142,11 +144,11 @@ function ElevationScroll(props) {
   
    
     const routes = [
-      { name: "Home",  activeIndex: 0 },
-      { name: "AboutMe",activeIndex: 1},
-      { name: "Skills", activeIndex: 2,link:'#shiless' },
-      { name: "Work Experiences", activeIndex: 3 },
-      { name: "ContactMe", activeIndex: 4 }
+      { name: "Home",  activeIndex: 0,link:'home' },
+      { name: "AboutMe",activeIndex: 1,link:'sks'},
+      { name: "Skills", activeIndex: 2,link:'skills' },
+      { name: "Work Experiences", activeIndex: 3,link:'skills' },
+      { name: "ContactMe", activeIndex: 4 ,link:'skils'}
     ];
   
     useEffect(() => {
@@ -176,20 +178,25 @@ function ElevationScroll(props) {
           value={props.value}
           onChange={handleChange}
           className={classes.tabContainer}
-          indicatorColor="primary"
+          TabIndicatorProps={{  
+            style: {
+                display: "none",
+            },
+          }}
         >
           {routes.map((route, index) => (
-      
+       <ScrollLink to={route.link} smooth={true}>
             <Tab
               key={`${route}${index}`}
               className={classes.tab}
-              // component={ScrollLink}
-              // smooth={true}
-              // to={route.link}
+             
+              // component={Link} to={route.link}
               
               style={{color:darkTheme ?  '#FFFFFF' : 'black',opacity:'80%'}}
               label={route.name}
             />
+            </ScrollLink>
+
        
           ))}
         </Tabs>
@@ -305,7 +312,7 @@ function ElevationScroll(props) {
           </AppBar>
         </ElevationScroll>
         <div className={classes.toolbarMargin} />
-      <ScrollTop showBelow={250} />
+  
       </React.Fragment>
     );
   }

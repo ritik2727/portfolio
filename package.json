@@ -24,6 +24,7 @@
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.4",
     "react-spinners": "^0.11.0",
+    "smooth-scrollbar": "^8.7.0",
     "typewriter-effect": "^2.18.2",
     "web-vitals": "^1.1.2"
   },

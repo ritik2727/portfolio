@@ -119,7 +119,7 @@ const useStyles = makeStyles(theme => ({
     }
 
     return (
-      <Grid container direction="column"  id='shiless'>
+      <Grid container direction="column"  id='skills'>
 
       <Grid
         item

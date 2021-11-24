@@ -135,7 +135,7 @@ function LandingPage(props) {
     }
   };
     return (
-      <Grid container direction='column' >
+      <Grid container direction='column' id='home' >
       <Grid
       container
       direction={matchesMD ? "column" : "row"}

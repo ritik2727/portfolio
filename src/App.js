@@ -13,6 +13,9 @@ import './components/ui/styles.css'
 import { BoltLoader } from "react-awesome-loaders";
 import Proficiency from './components/Proficiency';
 import { DarkThemeContext } from './context/DarkThemeContext';
+import ScrollTop from './components/ui/ScrollTop';
+
+
 
 
 function App(props) {
@@ -24,16 +27,21 @@ function App(props) {
   const [darkTheme,setDarkTheme] = dt;
   const [themeM] = t;
 
+
+
   
 
   useEffect(() => {
     setLoading(true)
     setTimeout(()=>{
       setLoading(false)
-    },2500)
+    },250)
   },[])
   return (
     <div>
+
+      
+     
 {loading ?
 <div class='loder'>
     <BoltLoader
@@ -45,9 +53,9 @@ function App(props) {
   :
     <StyledEngineProvider injectFirst>
     <ThemeProvider theme={themeM} >
-
+  
       <div style={{backgroundColor:darkTheme? '#171C28' :'#FFFFFF' ,height:'100%',width:'100%'}}>
- 
+    <ScrollTop   showBelow={250} />
       <Header   
       {...props}
       value={value}
@@ -55,7 +63,7 @@ function App(props) {
           selectedIndex={selectedIndex}
           setSelectedIndex={setSelectedIndex}/>
 
-       
+
     <LandingPage/>
     
        <Skills />
@@ -65,6 +73,7 @@ function App(props) {
     </ThemeProvider>
     </StyledEngineProvider>
 }
+
 </div>
   );
 }

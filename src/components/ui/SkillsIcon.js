@@ -142,9 +142,9 @@ function SkillsIcon(props) {
             <Grid item container direction='column' className={classes.iconContainer}  justifyContent='center' 
         alignItems='center'>
                 <Grid item > 
-                    <img src={item.logo}
+                    <img src={item.logo} class="imgSkills"
                         style={{height:40,width:40}}
-                        className={classes.icon}
+                      
                     />
                 </Grid>
                 <Grid item>
