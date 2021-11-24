@@ -17,10 +17,12 @@
 }
 
 
-.imgSkills:hover{
-  fill: #DA4567;
+.close {
+  fill: black;
 }
-
+.close:hover {
+  fill: green;
+}
 
 .scrollbar-track{
   background-color: transparent !important;

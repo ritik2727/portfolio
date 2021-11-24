@@ -29,7 +29,7 @@ const ProgressBar = (props) => {
     return (
         <>
        <div>
-           <Typography style={{color:'#FFFFFF'}}>
+           <Typography variant='h6'>
               {title}
            </Typography>
        </div>

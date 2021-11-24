@@ -74,7 +74,6 @@ const useStyles = makeStyles(theme => ({
               align={matchesMD ? "center" : "left"}
               variant="h3"
               gutterBottom
-              style={{color:mode}}
             >
             What I do
             </Typography>
@@ -103,6 +102,7 @@ const useStyles = makeStyles(theme => ({
               align={matchesMD ? "center" : "left"}
               variant="body1"
               paragraph
+
             >
               ⚡ Designing User Interfaces for various applications and giving out best User Experience
             </Typography>

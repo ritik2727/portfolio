@@ -15,6 +15,9 @@ import Proficiency from './components/Proficiency';
 import { DarkThemeContext } from './context/DarkThemeContext';
 import ScrollTop from './components/ui/ScrollTop';
 
+import ExperiencesCard from './components/ui/ExperiencesCard';
+import Experiences from './components/Experiences';
+
 
 
 
@@ -55,7 +58,7 @@ function App(props) {
     <ThemeProvider theme={themeM} >
   
       <div style={{backgroundColor:darkTheme? '#171C28' :'#FFFFFF' ,height:'100%',width:'100%'}}>
-    <ScrollTop   showBelow={250} />
+    <ScrollTop   showBelow={120} />
       <Header   
       {...props}
       value={value}
@@ -68,6 +71,8 @@ function App(props) {
     
        <Skills />
     <Proficiency />
+    {/* <ExperiencesCard /> */}
+  <Experiences />
      </div>
 
     </ThemeProvider>

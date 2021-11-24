@@ -147,7 +147,7 @@ function ElevationScroll(props) {
       { name: "Home",  activeIndex: 0,link:'home' },
       { name: "AboutMe",activeIndex: 1,link:'sks'},
       { name: "Skills", activeIndex: 2,link:'skills' },
-      { name: "Work Experiences", activeIndex: 3,link:'skills' },
+      { name: "Work Experiences", activeIndex: 3,link:'experience' },
       { name: "ContactMe", activeIndex: 4 ,link:'skils'}
     ];
   

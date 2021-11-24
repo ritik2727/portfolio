@@ -82,7 +82,6 @@ const testData = [
               align={matchesMD ? "center" : "left"}
               variant="h2"
               gutterBottom
-              style={{color:mode}}
             >
             Proficiency
             </Typography>

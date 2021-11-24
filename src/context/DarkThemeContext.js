@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext } from 'react'
 import { createTheme, ThemeProvider, styled ,responsiveFontSizes} from '@mui/material';
-
+import Colors from '../colors/Colors';
 export const DarkThemeContext = createContext();
 
 
@@ -24,10 +24,10 @@ export const DarkThemeProvider = (props) => {
           orange: arcOrange
         },
         primary: {
-          main: darkTheme?arcBlack:arcBlue,
+          main: darkTheme?Colors.BDark : Colors.BWhite,
         },
         secondary: {
-          main: arcOrange
+          main: darkTheme?Colors.white :Colors.Black
         }
       },
       typography:{
@@ -48,24 +48,30 @@ export const DarkThemeProvider = (props) => {
             fontFamily:'Raleway',
             fontWeight:700,
             fontSize:'2.5rem',
-            color:arcBlue,
+            color:darkTheme?Colors.white :Colors.Black,
             lineHeight:1.5
           },
           h3: {
             fontFamily: "Pacifico",
             fontSize: "2.5rem",
-            color: arcBlue
+            color:darkTheme?Colors.white :Colors.Black
           },
           h4:{
             fontFamily:'Raleway',
             fontSize:'1.75rem',
-            color:arcBlue,
+            color:darkTheme?Colors.white :Colors.Black,
             fontWeight:700
+          },
+          h5:{
+            fontFamily:'Raleway',
+            fontSize:'1.55rem',
+            color:darkTheme?Colors.white :Colors.Black,
+            fontWeight:550
           },
           h6: {
             fontWeight: 500,
             fontFamily: "Raleway",
-            color: arcBlue,
+            color: darkTheme?Colors.white :Colors.Black,
             lineHeight:1
           },
           subtitle1:{
@@ -80,7 +86,7 @@ export const DarkThemeProvider = (props) => {
           },
           body1: {
             fontSize: "1.25rem",
-            color:'#868E96',
+            color:darkTheme?Colors.SubWhite :Colors.SubBlack,
             fontWeight: 300
           },
           caption: {

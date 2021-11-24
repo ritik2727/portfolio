@@ -20,6 +20,7 @@ import python from '../../assets/python.svg'
 import redux from '../../assets/redux.svg'
 import '../ui/styles.css'
 
+
 const useStyles = makeStyles(theme => ({
     rowContainer: {
       paddingLeft: "5em",
@@ -142,9 +143,9 @@ function SkillsIcon(props) {
             <Grid item container direction='column' className={classes.iconContainer}  justifyContent='center' 
         alignItems='center'>
                 <Grid item > 
-                    <img src={item.logo} class="imgSkills"
+                    <img src={item.logo} className="close"
                         style={{height:40,width:40}}
-                      
+                    
                     />
                 </Grid>
                 <Grid item>
