@@ -17,6 +17,7 @@ import ScrollTop from './components/ui/ScrollTop';
 
 import ExperiencesCard from './components/ui/ExperiencesCard';
 import Experiences from './components/Experiences';
+import Project from './components/Project';
 
 
 
@@ -57,7 +58,7 @@ function App(props) {
     <StyledEngineProvider injectFirst>
     <ThemeProvider theme={themeM} >
   
-      <div style={{backgroundColor:darkTheme? '#171C28' :'#FFFFFF' ,height:'100%',width:'100%'}}>
+      <div style={{backgroundColor:darkTheme? '#171C28' :'#FFFFFF' ,height:'100%',width:'100%',}}>
     <ScrollTop   showBelow={120} />
       <Header   
       {...props}
@@ -73,6 +74,7 @@ function App(props) {
     <Proficiency />
     {/* <ExperiencesCard /> */}
   <Experiences />
+  <Project />
      </div>
 
     </ThemeProvider>

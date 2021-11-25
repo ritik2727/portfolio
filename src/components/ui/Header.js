@@ -14,6 +14,8 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Zoom from '@mui/material/Zoom';
 import ScrollTop from './ScrollTop';
 import logo from '../../assets/rj455.svg'
+import sun from '../../assets/sun.svg';
+import moon from '../../assets/moon.svg';
 import './styles.css'
 import { Link as ScrollLink } from "react-scroll";
 
@@ -212,13 +214,13 @@ function ElevationScroll(props) {
          
         >{darkTheme ?
           <img 
-          src='https://cdn-icons-png.flaticon.com/512/2698/2698194.png'
+          src={moon}
            style={{width:25,height:25}} 
 
            />
            :
            <img 
-           src='https://cdn-icons.flaticon.com/png/512/3106/premium/3106764.png?token=exp=1637247370~hmac=9ed4c84fc9b80f58fee1a5111a878ec8'
+           src={sun}
             style={{width:25,height:25}} 
  
             />
@@ -316,3 +318,7 @@ function ElevationScroll(props) {
       </React.Fragment>
     );
   }
+
+  // https://cdn-icons-png.flaticon.com/512/2698/2698194.png
+
+  // 'https://cdn-icons.flaticon.com/png/512/3106/premium/3106764.png?token=exp=1637247370~hmac=9ed4c84fc9b80f58fee1a5111a878ec8'

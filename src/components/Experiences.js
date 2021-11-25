@@ -85,11 +85,10 @@ function Experiences(props) {
             alignItems='center' 
             justifyContent='center' 
             spacing={4}
-           
         >
             {experience && experience.map((doc) =>(
                 
-                <Grid item >
+                <Grid item   >
                    <ExperiencesCard 
                         role={doc.role}
                         company={doc.company}

@@ -147,13 +147,12 @@ function LandingPage(props) {
       <Grid item container direction="column" md style={{ maxWidth: "40em" }}>
         <Grid item>
         <Typography variant="h4" align="center"  
-            style={{color:darkTheme? '#FFFFFF' :'#171C28' }}
+           
             >
               Hello, I'M {" "}<span className={classes.specialText}>Ritik Jain</span>
             
             </Typography>
             <Typography variant="h2" align="center"  
-            style={{color:darkTheme? '#FFFFFF' :'#171C28' }}
             >
                 <Typewriter
                 options={{
