@@ -6,6 +6,7 @@ export const DarkThemeContext = createContext();
 
 
 
+
 export const DarkThemeProvider = (props) => {
     const [darkTheme, setDarkTheme] = useState(getDefaultTheme); 
 
@@ -104,32 +105,63 @@ export const DarkThemeProvider = (props) => {
             fontWeight: "bold"
           }
       },
-      components :{
-        MuiInputLabel:{
-          styleOverrides:{
-            root:{
-              color:arcBlue,
-              fontSize:'1rem'
-            }
-        }
-        },
-        MuiInput:{
+
+      
+
+     components: {
+        MuiInputLabel: {
           styleOverrides:{
           root: {
-            color: arcGrey,
+            color: 'red',
+            fontSize: "1rem"
+          }
+        }
+        },
+        MuiInput: {
+          styleOverrides:{
+          root: {
+            color:'red',
             fontWeight: 300
           },
+        },
+   
           underline: {
+            styleOverrides:{
             "&:before": {
-              borderBottom: `2px solid ${arcBlue}`
+              borderBottom: `2px solid ${arcGrey}`
             },
             "&:hover:not($disabled):not($focused):not($error):before": {
-              borderBottom: `2px solid ${arcBlue}`
+              borderBottom: '2px solid green'
             }
           }
         }
       }
-      }
+    }
+    
+      //   MuiInputLabel:{
+      //     styleOverrides:{
+      //       root:{
+      //         color:arcBlue,
+      //         fontSize:'1rem'
+      //       }
+      //   }
+      //   },
+      //   MuiInput:{
+      //     styleOverrides:{
+      //     root: {
+      //       color: arcGrey,
+      //       fontWeight: 300
+      //     },
+      //     underline: {
+      //       "&:before": {
+      //         borderBottom: `2px solid ${arcBlue}`
+      //       },
+      //       "&:hover:not($disabled):not($focused):not($error):before": {
+      //         borderBottom: `2px solid ${arcBlue}`
+      //       }
+      //     }
+      //   }
+      // }
     })
     const themeM = responsiveFontSizes(theme);
      

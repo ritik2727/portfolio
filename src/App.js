@@ -1,23 +1,27 @@
 // import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 // import { ThemeProvider } from '@mui/material/styles';
-import React,{useEffect,useState,useContext} from 'react';
+import React,{useEffect,useState,useContext ,Suspense,lazy} from 'react';
 import { ThemeProvider ,createTheme} from '@mui/material/styles';
 import { StyledEngineProvider } from '@mui/styled-engine';
 
 import { BrowserRouter,Route ,Switch } from "react-router-dom";
-import LandingPage from './components/LandingPage';
-import Skills from './components/Skills';
+import LandingPage from './components/home/LandingPage';
+import Skills from './components/skills/Skills';
 import Header from "./components/ui/Header";
 import { ClipLoader } from 'react-spinners';
 import './components/ui/styles.css'
 import { BoltLoader } from "react-awesome-loaders";
-import Proficiency from './components/Proficiency';
+import Proficiency from './components/skills/Proficiency';
 import { DarkThemeContext } from './context/DarkThemeContext';
 import ScrollTop from './components/ui/ScrollTop';
 
-import ExperiencesCard from './components/ui/ExperiencesCard';
-import Experiences from './components/Experiences';
-import Project from './components/Project';
+import ExperiencesCard from './components/experience/ExperiencesCard';
+import Experiences from './components/experience/Experiences';
+
+
+import ProjectCard from './components/projectmade/ProjectCard';
+import Project from './components/projectmade/Project';
+import ContactMe from './components/Contact/ContactMe';
 
 
 
@@ -42,19 +46,7 @@ function App(props) {
     },250)
   },[])
   return (
-    <div>
-
-      
-     
-{loading ?
-<div class='loder'>
-    <BoltLoader
-        className={"loaderbolt"}
-        boltColor={"#FBFF00"}
-        backgroundBlurColor={"#E0E7FF"}
-      />
-  </div>
-  :
+    <Suspense fallback={<div>loading</div>} >
     <StyledEngineProvider injectFirst>
     <ThemeProvider theme={themeM} >
   
@@ -74,17 +66,26 @@ function App(props) {
     <Proficiency />
     {/* <ExperiencesCard /> */}
   <Experiences />
-  <Project />
+<Project/>
+<ContactMe />
      </div>
 
     </ThemeProvider>
     </StyledEngineProvider>
-}
-
-</div>
+    </Suspense>
   );
 }
 
 export default App;
 
 
+     
+{/* {loading ?
+<div class='loder'>
+    <BoltLoader
+        className={"loaderbolt"}
+        boltColor={"#FBFF00"}
+        backgroundBlurColor={"#E0E7FF"}
+      />
+  </div>
+  : */}

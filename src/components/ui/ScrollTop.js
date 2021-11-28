@@ -7,7 +7,7 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 const useStyles = makeStyles((theme) => ({
     toTop: {
-        zIndex: 2,
+        zIndex: 3,
         position: 'fixed',
         bottom: '2vh',
         backgroundColor: '#DCDCDC',

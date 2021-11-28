@@ -3,14 +3,14 @@ import React, { useContext } from 'react';
 import { Typography , Button,useMediaQuery,Fab,ReactGA} from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useTheme } from '@mui/material';
-import animationData from "../animation/programmer.json";
+import animationData from "../../animation/programmer.json";
 import Lottie from "react-lottie";
 import Typewriter from 'typewriter-effect';
-import SocialMediaIcon from './ui/SocialMediaIcon';
-import Skills from './Skills';
-import reactjs from '../assets/reactjs.svg'
+import SocialMediaIcon from '../ui/SocialMediaIcon';
+import Skills from '../skills/Skills';
+import reactjs from '../../assets/reactjs.svg'
 import { padding } from '@mui/system';
-import { DarkThemeContext } from '../context/DarkThemeContext';
+import { DarkThemeContext } from '../../context/DarkThemeContext';
 
 
 

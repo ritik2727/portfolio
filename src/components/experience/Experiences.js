@@ -1,8 +1,9 @@
 import React,{useContext} from 'react';
 import { Grid,Typography,useMediaQuery,useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import ExperiencesCard from './ui/ExperiencesCard';
-import { DarkThemeContext } from '../context/DarkThemeContext';
+import ExperiencesCard from './ExperiencesCard';
+import { DarkThemeContext } from '../../context/DarkThemeContext';
+
 
 const useStyles = makeStyles(theme => ({
     rowContainer: {

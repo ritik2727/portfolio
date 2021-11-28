@@ -8,7 +8,7 @@ import { useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu'
 import {Link} from 'react-router-dom'
 import { createTheme } from '@mui/material';
-import LandingPage from '../LandingPage';
+import LandingPage from '../home/LandingPage';
 import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Zoom from '@mui/material/Zoom';
