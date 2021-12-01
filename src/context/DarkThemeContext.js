@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from 'react'
-import { createTheme, ThemeProvider, styled ,responsiveFontSizes} from '@mui/material';
+import { createTheme,responsiveFontSizes} from '@mui/material';
 import Colors from '../colors/Colors';
 export const DarkThemeContext = createContext();
 
@@ -14,14 +14,11 @@ export const DarkThemeProvider = (props) => {
     const arcBlue = '#FFFFFF';
     const arcOrange = '#FFBA60';
     const arcGrey ='#868686'
-    const arcBlack ='#171C28';
-    
-    
     
   let theme = createTheme({
       palette: {
         common: {
-          blue:arcBlue,
+          blue:Colors.blue,
           orange: arcOrange
         },
         primary: {
@@ -105,14 +102,12 @@ export const DarkThemeProvider = (props) => {
             fontWeight: "bold"
           }
       },
-
-      
-
      components: {
         MuiInputLabel: {
           styleOverrides:{
+            
           root: {
-            color: 'red',
+            color:Colors.blue,
             fontSize: "1rem"
           }
         }
@@ -120,48 +115,20 @@ export const DarkThemeProvider = (props) => {
         MuiInput: {
           styleOverrides:{
           root: {
-            color:'red',
+            color: Colors.blue,
             fontWeight: 300
           },
-        },
-   
           underline: {
-            styleOverrides:{
             "&:before": {
-              borderBottom: `2px solid ${arcGrey}`
+              borderBottom: `2px solid ${Colors.blue}`
             },
             "&:hover:not($disabled):not($focused):not($error):before": {
-              borderBottom: '2px solid green'
+              borderBottom: `2px solid ${Colors.blue}`
             }
           }
         }
       }
-    }
-    
-      //   MuiInputLabel:{
-      //     styleOverrides:{
-      //       root:{
-      //         color:arcBlue,
-      //         fontSize:'1rem'
-      //       }
-      //   }
-      //   },
-      //   MuiInput:{
-      //     styleOverrides:{
-      //     root: {
-      //       color: arcGrey,
-      //       fontWeight: 300
-      //     },
-      //     underline: {
-      //       "&:before": {
-      //         borderBottom: `2px solid ${arcBlue}`
-      //       },
-      //       "&:hover:not($disabled):not($focused):not($error):before": {
-      //         borderBottom: `2px solid ${arcBlue}`
-      //       }
-      //     }
-      //   }
-      // }
+      }
     })
     const themeM = responsiveFontSizes(theme);
      

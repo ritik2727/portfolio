@@ -3,11 +3,11 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GoogleIcon from '@mui/icons-material/Google';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { Grid , Typography,Fab } from '@mui/material';
+import { Grid ,Fab } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import { ClassNames } from '@emotion/react';
 
-const useStyles = makeStyles((theme,darkTheme) => ({
+
+const useStyles = makeStyles(theme => ({
     icon:{
         color:'#F7F7F7'
     }

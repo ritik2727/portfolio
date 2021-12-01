@@ -2,12 +2,11 @@ import  React,{useContext} from 'react';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 import Colors from '../../colors/Colors';
-import { padding } from '@mui/system';
 import { DarkThemeContext } from '../../context/DarkThemeContext';
 
 export default function ExperiencesCard({role,company,date,desc}) {
   const { dt} = useContext(DarkThemeContext)
-  const [darkTheme,setDarkTheme] = dt;
+  const [darkTheme] = dt;
   const bordercolor = darkTheme?Colors.SubWhite :Colors.SubBlack;
   return (
     <Box

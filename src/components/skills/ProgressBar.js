@@ -20,12 +20,6 @@ const ProgressBar = (props) => {
       textAlign: 'right'
     }
   
-    const labelStyles = {
-      padding: 5,
-      color: 'white',
-      fontWeight: 'bold'
-    }
-  
     return (
         <>
        <div>

@@ -1,16 +1,15 @@
 import { Grid } from '@mui/material';
-import React, { useContext } from 'react';
-import { Typography , Button,useMediaQuery,Fab,ReactGA} from '@mui/material';
+import React from 'react';
+import { Typography , Button,useMediaQuery} from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useTheme } from '@mui/material';
 import animationData from "../../animation/programmer.json";
 import Lottie from "react-lottie";
 import Typewriter from 'typewriter-effect';
 import SocialMediaIcon from '../ui/SocialMediaIcon';
-import Skills from '../skills/Skills';
-import reactjs from '../../assets/reactjs.svg'
-import { padding } from '@mui/system';
-import { DarkThemeContext } from '../../context/DarkThemeContext';
+
+
+
 
 
 
@@ -119,12 +118,7 @@ const useStyles = makeStyles((theme,darkTheme) => ({
 function LandingPage(props) {
     const classes = useStyles();
   const theme = useTheme();
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
-  const { dt} = useContext(DarkThemeContext)
-  const [darkTheme,setDarkTheme] = dt;
-
 
   const defaultOptions = {
     loop: true,

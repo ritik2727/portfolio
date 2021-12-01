@@ -1,27 +1,19 @@
-// import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-// import { ThemeProvider } from '@mui/material/styles';
-import React,{useEffect,useState,useContext ,Suspense,lazy} from 'react';
-import { ThemeProvider ,createTheme} from '@mui/material/styles';
+import React,{useState,useContext ,Suspense} from 'react';
+import { ThemeProvider } from '@mui/material/styles';
 import { StyledEngineProvider } from '@mui/styled-engine';
-
-import { BrowserRouter,Route ,Switch } from "react-router-dom";
 import LandingPage from './components/home/LandingPage';
 import Skills from './components/skills/Skills';
 import Header from "./components/ui/Header";
-import { ClipLoader } from 'react-spinners';
 import './components/ui/styles.css'
-import { BoltLoader } from "react-awesome-loaders";
 import Proficiency from './components/skills/Proficiency';
 import { DarkThemeContext } from './context/DarkThemeContext';
 import ScrollTop from './components/ui/ScrollTop';
-
-import ExperiencesCard from './components/experience/ExperiencesCard';
 import Experiences from './components/experience/Experiences';
 
 
-import ProjectCard from './components/projectmade/ProjectCard';
 import Project from './components/projectmade/Project';
 import ContactMe from './components/Contact/ContactMe';
+
 
 
 
@@ -30,21 +22,16 @@ function App(props) {
   const [value,setValue] = useState(0);
   const [selectedIndex,setSelectedIndex] = useState(0)
 
-  const [loading,setLoading] = useState(false)
+  
   const { dt,t} = useContext(DarkThemeContext)
-  const [darkTheme,setDarkTheme] = dt;
+  const [darkTheme] = dt;
   const [themeM] = t;
 
 
 
   
 
-  useEffect(() => {
-    setLoading(true)
-    setTimeout(()=>{
-      setLoading(false)
-    },250)
-  },[])
+ 
   return (
     <Suspense fallback={<div>loading</div>} >
     <StyledEngineProvider injectFirst>
@@ -60,14 +47,16 @@ function App(props) {
           setSelectedIndex={setSelectedIndex}/>
 
 
-    <LandingPage/>
+     <LandingPage/>
     
        <Skills />
-    <Proficiency />
-    {/* <ExperiencesCard /> */}
+    <Proficiency /> 
+
   <Experiences />
 <Project/>
 <ContactMe />
+
+
      </div>
 
     </ThemeProvider>
@@ -80,12 +69,3 @@ export default App;
 
 
      
-{/* {loading ?
-<div class='loder'>
-    <BoltLoader
-        className={"loaderbolt"}
-        boltColor={"#FBFF00"}
-        backgroundBlurColor={"#E0E7FF"}
-      />
-  </div>
-  : */}

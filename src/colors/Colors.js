@@ -1,4 +1,4 @@
-export default{
+const Colors = {
     BWhite:'#FFFFFF',
     BDark:'#171C28',
     Black:'#2D3748',
@@ -11,5 +11,5 @@ export default{
     danger: "#ff5252",
     blue:'#1976D2'
 }
-
+export default Colors;
 // '#1E2022'

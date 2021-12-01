@@ -1,14 +1,9 @@
-import { Grid,Typography,useMediaQuery ,Button, Hidden} from '@mui/material';
+import { Grid,Typography,useMediaQuery , Hidden} from '@mui/material';
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { useTheme } from '@mui/material';
 import technologyAnimation from "../../animation/landingPageCoder.json";
 import Lottie from "react-lottie";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { faReact,faNode } from '@fortawesome/free-brands-svg-icons'
-import nextjs from '../../assets/nextjs.svg'
-import { width } from '@mui/system';
 import SkillsIcon from './SkillsIcon';
 
 
@@ -43,8 +38,7 @@ const useStyles = makeStyles(theme => ({
     const classes = useStyles();
     const theme = useTheme();
     const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
-    const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-    const mode = props.dark? '#FFFFFF' :'#171C28' ;
+   
   
     const defaultOptions = {
       loop: true,

@@ -1,8 +1,8 @@
-import React,{useContext} from 'react';
+import React from 'react';
 import { Grid,Typography,useMediaQuery,useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import ExperiencesCard from './ExperiencesCard';
-import { DarkThemeContext } from '../../context/DarkThemeContext';
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -61,11 +61,9 @@ const experience = [
 function Experiences(props) {
     const theme = useTheme();
     const classes = useStyles();
-    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
+
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
-    const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
-    const { dt} = useContext(DarkThemeContext)
-    const [darkTheme,setDarkTheme] = dt;
+  
 
     return (
         <Grid 

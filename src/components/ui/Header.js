@@ -1,18 +1,10 @@
 import React, { useState ,useEffect,useContext} from 'react';
-import { AppBar,Button,IconButton,List,ListItem,Menu,MenuItem,Tab,Tabs,SwipeableDrawer,Box } from '@mui/material';
+import { AppBar,Button,IconButton,List,ListItem,Tab,Tabs,SwipeableDrawer } from '@mui/material';
 import { Toolbar,useScrollTrigger ,ListItemText,Slide} from '@mui/material';
-import { Switch } from '@mui/material';
 import makeStyles  from '@mui/styles/makeStyles';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu'
-import {Link} from 'react-router-dom'
-import { createTheme } from '@mui/material';
-import LandingPage from '../home/LandingPage';
-import Fab from '@mui/material/Fab';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import Zoom from '@mui/material/Zoom';
-import ScrollTop from './ScrollTop';
 import logo from '../../assets/rj455.svg'
 import sun from '../../assets/sun.svg';
 import moon from '../../assets/moon.svg';
@@ -172,7 +164,7 @@ function ElevationScroll(props) {
             break;
         }
       });
-    }, [props.value, props.selectedIndex, routes, props]);
+    });
   
     const tabs = (
       <React.Fragment>
@@ -216,12 +208,14 @@ function ElevationScroll(props) {
           <img 
           src={moon}
            style={{width:25,height:25}} 
+           alt='moon'
 
            />
            :
            <img 
            src={sun}
             style={{width:25,height:25}} 
+            alt='sun'
  
             />
         }
@@ -305,7 +299,7 @@ function ElevationScroll(props) {
                 className={classes.logoContainer}
                 style={{color:'white'}}
               >
-              <img src={logo} 
+              <img src={logo} alt='logo'
                style={{height:70,width:70,padding:'0.5em',marginLeft:'2em'}}
               />
               </Button>

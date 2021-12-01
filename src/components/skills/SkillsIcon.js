@@ -143,7 +143,7 @@ function SkillsIcon(props) {
             <Grid item container direction='column' className={classes.iconContainer}  justifyContent='center' 
         alignItems='center'>
                 <Grid item > 
-                    <img src={item.logo} className="close"
+                    <img src={item.logo} className="close" alt={item.title}
                         style={{height:40,width:40}}
                     
                     />
@@ -168,14 +168,3 @@ function SkillsIcon(props) {
 export default SkillsIcon;
 
 
-{/* <Grid item>
-<Grid item container direction='column' className={classes.iconContainer}>
-  
-  <Grid item > 
-<FontAwesomeIcon icon={faNode} color='#868E96'  className={classes.icon}    size='2x' />
-</Grid>
-<Grid item>
-<Typography variant='body2' className={classes.icon}>reactjs</Typography>
-</Grid>
-</Grid>
-</Grid> */}

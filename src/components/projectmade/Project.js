@@ -1,7 +1,5 @@
-import React,{useContext} from 'react';
+import React from 'react';
 import { Typography } from '@mui/material';
-import { makeStyles } from '@mui/styles';
-import { DarkThemeContext } from '../../context/DarkThemeContext';
 import './ProjectCard.css.map'
 import banking from '../../assets/banking.svg';
 import project from '../../assets/bewkoof.svg';
@@ -24,24 +22,6 @@ import Carousel from "react-elastic-carousel";
 import "./stylest.css";
 
 
-const useStyles = makeStyles(theme => ({
-    rowContainer: {
-        paddingLeft: '2em',
-        paddingRight: '2em',
-        paddingTop: '2em',
-        paddingBottom: '10em',
-        [theme.breakpoints.down('sm')]: {
-            paddingLeft: '1em',
-            paddingRight: '1em',
-            paddingTop: '1em',
-        },
-        [theme.breakpoints.down('xs')]: {
-            paddingLeft: '0.5em',
-            paddingRight: '0.5em',
-            paddingTop: '0.5em',
-        }
-    },
-}))
 const data = [
   { 
   type: 'Website', 
@@ -94,8 +74,7 @@ const breakPoints = [
 ];
 
 function Project() {
-  const { dt} = useContext(DarkThemeContext)
-  const [darkTheme,setDarkTheme] = dt;
+
   return (
     <>
        <Typography  variant='h2' align='center' >Projects</Typography>
